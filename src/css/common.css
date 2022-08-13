@@ -12,6 +12,8 @@ body {
   line-height: 1.5;
 }
 
+/* -------------------TIMER------------------- */
+
 img {
   display: block;
   max-width: 100%;
@@ -19,7 +21,6 @@ img {
 
 .timer {
   display: flex;
-
   margin-top: 20px;
 }
 
@@ -46,4 +47,30 @@ img {
   font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+/* -------------------PROMISES------------------- */
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+label + label {
+  margin-left: 5px;
+}
+
+.form {
+  display: flex;
+  align-items: flex-end;
+}
+
+[type='submit'] {
+  margin-left: 5px;
+  height: 25px;
+}
+
+input {
+  width: 150px;
+  height: 25px;
 }
