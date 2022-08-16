@@ -31,12 +31,12 @@ const flatpickerOpts = {
     targetDate = selectedDates[0].getTime();
 
     if (targetDate <= Date.now()) {
-      refs.startBtn.setAttribute('disabled', true);
+      refs.startBtn.disabled = true;
       Notify.failure('Please choose a date in the future');
       return;
     }
 
-    refs.startBtn.removeAttribute('disabled');
+    refs.startBtn.disabled = false;
   },
 };
 
@@ -138,8 +138,8 @@ eventEmitter.on('timeStop', onTimeStop);
 function onStartBtnClick(event) {
   const timer = new CountDownTimer(targetDate);
   timer.start();
-  refs.dateTimePicker.setAttribute('disabled', true);
-  refs.startBtn.setAttribute('disabled', true);
+  refs.dateTimePicker.disabled = true;
+  refs.startBtn.disabled = true;
 }
 
 function onTimeUpdate(time) {
@@ -147,6 +147,6 @@ function onTimeUpdate(time) {
 }
 
 function onTimeStop() {
-  refs.dateTimePicker.removeAttribute('disabled');
-  refs.startBtn.removeAttribute('disabled');
+  refs.dateTimePicker.disabled = false;
+  refs.startBtn.disabled = false;
 }
